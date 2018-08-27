@@ -1,0 +1,62 @@
+Als erstes importiert man react router Elemente in die indey.js Datei
+=> import { HashRouter, Route } from "react-router-dom";
+
+
+Dann bindet man in der index.js Datei den HashRouter ein inkl. die Route mit den Pfad und der dazugehörgien Komponente
+Das ist der Pfad zur Starseite => path={"/"} 
+Mit component verweist man dann auf die Komponente => component={Startseite}
+div muss ich auch einfügen!
+Wichtig damit nur die Startseite für den Pfad mit dem Schrägstrich angezeigt wird muss man exact={true}   einfügen!!
+(Weil sonst wird z.b. auf der zweiten Seite auch die erste Seite mit oben angezeigt, weil da ja in der URL auch ein Schrägstrich steht)
+<HashRouter>
+<div>
+<Route exact={true} path={"/"} component={Startseite}/>
+<Route path={"/ZweiteSeite"} component={ZweiteSeite}/>
+</div>
+</HashRouter>,
+
+
+Jetzt die Navigation
+Wir erstellen erst eine neue Komponente mit dem Namen Navigation
+Da importieren wir Link von react-router-dom & natürlich die react komponenten
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
+
+Jetzt erstellen wir in der Komponente die Navigation mit typischen html ul Listen
+class Navigation extends Component {
+  render() {
+    return (
+      <div>
+          <ul>
+            <li>
+            <Link to="/ZweiteSeite">Zur zweiten Seite</Link>
+            </li>
+
+            <li>
+            <Link to="/">Zur Startseite</Link>
+            </li>
+
+          </ul>
+
+      </div>
+    );
+  }
+}
+
+export default Navigation;
+
+
+Dann binden wir die Kompoente Navigation in die index.js Datei ein
+<HashRouter>
+
+<div>
+
+ <Navigation/>
+
+<Route exact={true} path={"/"} component={Startseite}/>
+<Route path={"/ZweiteSeite"} component={ZweiteSeite}/>
+
+</div>
+
+</HashRouter>,
