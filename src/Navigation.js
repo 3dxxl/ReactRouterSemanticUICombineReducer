@@ -6,30 +6,62 @@ import  './App.css';
 import {connect} from 'react-redux';
 import { actionCreators } from './redux/actions/MeineActions';
 
+//Semantic UI
+import { Menu } from 'semantic-ui-react'
+
 //Die Komponente Navigation kann direkt auf den Store zugreifen, da Sie in der index.js Datei 
 //innerhalb von <Provider store={store}> steht und somit jeden zustand über die props abrufen kann
 //Wichtig: Aber um zustand Änder in dieser Navogations Komponente zu sehen, muss ich 
 //trotzdem noch connect&actionCreators und mapStateToProps Funktion & connect ausführen
 
+//Um Semantic UI mit react router zu verbinden, muss man as={NavLink} zum Link verweis einsetzen, 
+//und dann natürlich die jeweitlige adresse z.b. die Startseite mit to="/"
+
+
 class Navigation extends Component {
+
+  state = {}
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   render() {
+
+    const { activeItem } = this.state
+
     return (
       <div>
-          <ul className="NavStyleUL">
+          <Menu>
+        <Menu.Item
+          name='editorials'
+          active={activeItem === 'editorials'}
+          onClick={this.handleItemClick}
+          as={NavLink} 
+          to="/"
+          style={{color:this.props.farbe}}
+        >
+          Startseite
+        </Menu.Item>
 
-            <li>
-            <NavLink to="/" exact style={{color:this.props.farbe}}>Zur Startseite</NavLink>
-            </li>
+        <Menu.Item 
+        name='reviews' 
+        active={activeItem === 'reviews'} 
+        onClick={this.handleItemClick}
+        as={NavLink} 
+        to="/ZweiteSeite"
+        >
+          ZweiteSeite
+        </Menu.Item>
 
-            <li>
-            <NavLink to="/ZweiteSeite" exact activeStyle={{color:'black'}}>Zur zweiten Seite</NavLink>
-            </li>
-
-            <li>
-            <NavLink to="/DritteSeite" exact activeStyle={{color:'black'}}>Zur dritten Seite</NavLink>
-            </li>
-
-          </ul>
+        <Menu.Item
+          name='upcomingEvents'
+          active={activeItem === 'upcomingEvents'}
+          onClick={this.handleItemClick}
+          as={NavLink} 
+          to="/DritteSeite"
+        >
+          DritteSeite
+        </Menu.Item>
+      </Menu>
 
       </div>
     );
