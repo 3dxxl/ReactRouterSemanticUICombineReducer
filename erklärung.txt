@@ -18,23 +18,25 @@ Wichtig damit nur die Startseite für den Pfad mit dem Schrägstrich angezeigt w
 
 Jetzt die Navigation
 Wir erstellen erst eine neue Komponente mit dem Namen Navigation
-Da importieren wir Link von react-router-dom & natürlich die react komponenten
+Da importieren wir NavLink von react-router-dom & natürlich die react komponenten
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 Jetzt erstellen wir in der Komponente die Navigation mit typischen html ul Listen
+mit exact activeStyle={{color:'green'}} kann ich die Farbe der aktiven navigation bestimmen
 class Navigation extends Component {
   render() {
     return (
       <div>
           <ul>
+
             <li>
-            <Link to="/ZweiteSeite">Zur zweiten Seite</Link>
+            <NavLink to="/" exact activeStyle={{color:'green'}}>Zur Startseite</NavLink>
             </li>
 
             <li>
-            <Link to="/">Zur Startseite</Link>
+            <NavLink to="/ZweiteSeite" exact activeStyle={{color:'green'}}>Zur zweiten Seite</NavLink>
             </li>
 
           </ul>

@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { HashRouter, Route } from "react-router-dom";
 import ZweiteSeite from './ZweiteSeite';
 import Navigation from './Navigation';
+import DritteSeite from './DritteSeite';
 
 
 ReactDOM.render(
@@ -18,6 +19,8 @@ ReactDOM.render(
 
 <Route exact={true} path={"/"} component={Startseite}/>
 <Route path={"/ZweiteSeite"} component={ZweiteSeite}/>
+<Route path={"/DritteSeite"} component={DritteSeite}/>
+
 </div>
 </HashRouter>,
 

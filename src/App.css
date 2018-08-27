@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(174, 228, 139);
   height: 150px;
   padding: 20px;
   color: white;
@@ -25,4 +25,23 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/*Hier bearbeite ich die Navigation*/
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.NavStyleUL {
+  background-color:rgb(186, 236, 120);
+  width: 20%;
+  height: 100px;
+  padding: 1%;
 }
