@@ -43,8 +43,7 @@ function mapStateToProps(state) {
     }
 }
 
-export const ButtContainer = connect(mapStateToProps, actionCreators)(ButtonExampleColored);
+export default connect(mapStateToProps, actionCreators)(ButtonExampleColored);
 
-export default ButtonExampleColored;
   
   

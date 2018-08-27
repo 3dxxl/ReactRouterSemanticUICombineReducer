@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {actionCreators} from './redux/actions/MeineActions';
 
 //Mein Button mit als import SemanticUI
-import ButtContainer  from './MeinButton';
+import ButtonExampleColored  from './MeinButton';
 
 
 class Startseite extends Component {
@@ -29,7 +29,7 @@ class Startseite extends Component {
       {/*Hier habe ich die props über ein beliebiges Objekt z.b. data oder dato könnte auch BerndDasBrot heißen
         festgesetzt in der ButtContainer Komponente u. diese dann in der Startseite wieder an den eigentlichen 
         Store verknüpft*/}
-          <ButtContainer data={this.props.farbe}
+          <ButtonExampleColored data={this.props.farbe}
           dato={this.props.nameOffTheAction}
           />
 
