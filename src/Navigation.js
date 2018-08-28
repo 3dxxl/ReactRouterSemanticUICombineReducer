@@ -68,7 +68,8 @@ class Navigation extends Component {
   }
 }
 
-//Hier wird state zu props
+//Wichig da wir mit combineReducer gearbeitet haben und wir den state sozusagen nochmal verschachtelt haben
+//müssen wir anstatt return {farbe: state.farbe} das hier eingeben return {farbe: state.farbe.farbe} & schriftNav: state.schriftNav.schriftNav
 function mapStateToProps(state) {
 
   return {
