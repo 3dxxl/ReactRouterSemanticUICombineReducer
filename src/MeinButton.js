@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import { actionCreators } from './redux/actions/MeineActions';
 
 //Semantic UI
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
 
 class ButtonExampleColored extends Component {
 

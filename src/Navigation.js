@@ -37,7 +37,7 @@ class Navigation extends Component {
           onClick={this.handleItemClick}
           as={NavLink} 
           to="/"
-          style={{color:this.props.farbe}}
+          style={{color:this.props.farbe, fontFamily: this.props.schriftNav,}}
         >
           Startseite
         </Menu.Item>
@@ -73,7 +73,8 @@ function mapStateToProps(state) {
 
   return {
 
-      farbe: state.farbe
+      farbe: state.farbe.farbe,
+      schriftNav: state.schriftNav.schriftNav
       
   }
 }

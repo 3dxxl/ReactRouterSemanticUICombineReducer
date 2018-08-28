@@ -5,7 +5,13 @@ export const actionCreators = {
 
 	nameOffTheActionZwei: (event) => {
 		return {type: "CHANGE_COLORinRed"};
-	}
+	},
+	nameOffTheActionDrei: (event) => {
+		return {type: "CHANGE_Schrift"};
+	},
+	nameOffTheActionVier: (event) => {
+		return {type: "CHANGE_SchriftZurück"};
+	},
 	
 	
 }

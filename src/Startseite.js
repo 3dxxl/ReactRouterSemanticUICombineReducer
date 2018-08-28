@@ -33,16 +33,29 @@ class Startseite extends Component {
           dato={this.props.nameOffTheAction}
           />
 
+        <button 
+        style={{width:150, height: 200}}
+        onClick={this.props.nameOffTheActionDrei}>
+        Ändere die Schrift in zu Verdana
+        </button>
+
+        <button 
+        style={{width:150, height: 200}}
+        onClick={this.props.nameOffTheActionVier}>
+        Ändere die Schrift in zu Times New Roman
+        </button>
+
       </div>
+      
     );
   }
 }
 
 function mapStateToProps (state) {
 
-  return {farbe: state.farbe}
+  return {farbe: state.farbe.farbe}
 }
 export const AppContainer = connect(mapStateToProps, actionCreators)(Startseite);
 
 
-export default Startseite;
+//export default Startseite;

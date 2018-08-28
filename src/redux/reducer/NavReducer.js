@@ -1,30 +1,20 @@
-/* import {initialState} from '../MeinStore';
-
+export const initialState = {
+    schriftNav: 'Times New Roman'
+}; 
 
 export const reducer = (state = initialState, action) => {
 	switch (action.type) {
     
-			case "CHANGE_COLORinBlue":
-					return {
-							...state,
-							farbe: "blue"
-					};
-
-			case "CHANGE_COLORinRed":
-					return {
-							...state,
-							farbe: "red"
-					};
 
 			case "CHANGE_Schrift":
 					return {
-							...state,
+						//	...state,
 							schriftNav: "Verdana"
 					};
 
 			case "CHANGE_SchriftZurück":
 					return {
-							...state,
+						//	...state,
 							schriftNav: "Times New Roman"
 					};
 			
@@ -32,4 +22,4 @@ export const reducer = (state = initialState, action) => {
 			default:
 					return state
 	}
-} */
+}
